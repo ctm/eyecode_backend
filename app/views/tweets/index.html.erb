@@ -1,0 +1,25 @@
+<h1>Listing tweets</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Tweeted at</th>
+    <th>Msg twid</th>
+    <th>Text</th>
+    <th>Image url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tweets.each do |tweet| %>
+  <tr>
+    <td><%= tweet.user %></td>
+    <td><%= tweet.tweeted_at %></td>
+    <td><%= tweet.msg_twid %></td>
+    <td><%= tweet.text %></td>
+    <td><%= tweet.image_url %></td>
+    <td><%= link_to 'Show', tweet %></td>
+  </tr>
+<% end %>
+</table>

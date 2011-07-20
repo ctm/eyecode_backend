@@ -1,0 +1,41 @@
+<h1>Listing Users</h1>
+
+<table>
+  <tr>
+    <th>Login</th>
+    <th>Email</th>
+    <th>Active?</th>
+    <th>Time Zone</th>
+    <th>Login count</th>
+    <th>Failed login count</th>
+    <th>Last request at</th>
+    <th>Current login at</th>
+    <th>Last login at</th>
+    <th>Current login ip</th>
+    <th>Last login ip</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.login %></td>
+    <td><%= user.email %></td>
+    <td><%= user.active %></td>
+    <td><%= user.time_zone %></td>
+    <td><%= user.login_count %></td>
+    <td><%= user.failed_login_count %></td>
+    <td><%= user.last_request_at %></td>
+    <td><%= user.current_login_at %></td>
+    <td><%= user.last_login_at %></td>
+    <td><%= user.current_login_ip %></td>
+    <td><%= user.last_login_ip %></td>
+    <td><%= link_to 'Show', [:admin, user] %></td>
+    <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+    <td><%= link_to 'Destroy', [:admin, user], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<p>
+  <%= will_paginate @users %>
+  <%= link_to 'New user', new_admin_user_path %>
+</p>

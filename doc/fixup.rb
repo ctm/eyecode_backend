@@ -1,0 +1,7 @@
+$_.sub!(/render :layout => true/, "render :template => 'CONTROLLER/ACTION', :layout => 'layouts/application'")
+$_.sub!(/rendered.should have_tag\("form\[action=\#{(.*?)}\]\[method=post\]"\) do/, "rendered.should have_selector('form', :action => \\1, :method => 'post') do |form|")
+$_.sub!(/rendered.should have_tag\("form\[action=\?\]\[method=post\]",\s*(.*?)\s*\) do/, "rendered.should have_selector('form', :action => \\1, :method => 'post') do |form|")
+$_.sub!(/with_tag\(['"](.*?)\[name=\?\]['"], ['"](.*?)['"]\)/, "form.should have_selector('\\1', :name => '\\2')")
+$_.sub!(/rendered\.should have_tag\((.*?)\s*,\s*(.*?)\s*,\s*(.*?)\)/, "rendered.should have_selector(\\1, :content => \\2, :count => \\3)")
+$_.sub!(/should have_text/, 'should contain')
+$_.sub!(/response\./, 'rendered.')

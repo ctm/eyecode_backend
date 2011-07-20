@@ -1,0 +1,10 @@
+        sortable columns?
+
+        denormalization
+
+                create a tags table
+
+                user user_id in tweets instead of user
+                (need to auto-populate table)
+
+        Add pagination

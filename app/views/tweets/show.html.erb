@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @tweet.user %>
+</p>
+
+<p>
+  <b>Tweeted at:</b>
+  <%= @tweet.tweeted_at %>
+</p>
+
+<p>
+  <b>Msg twid:</b>
+  <%= @tweet.msg_twid %>
+</p>
+
+<p>
+  <b>Raw text:</b>
+  <%= @tweet.raw_text %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @tweet.text %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @tweet.image_url %>
+</p>
+
+<iframe src="<%= raw(@tweet.image_url) %>" height="2000" width="1200"></iframe>
+
+<%= link_to 'Back', tweets_path %>

@@ -1,0 +1,18 @@
+<h1>Edit Account <%= @user.login %></h1>
+
+<%= semantic_form_for @user, :url => user_path do |f| -%>
+  <%= f.semantic_errors %>
+  <%= f.inputs do -%>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%= f.input :time_zone, :priority_zones => ActiveSupport::TimeZone.us_zones %>
+  <% end -%>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end -%>
+
+<p>
+  <%= link_to 'My Account', user_path %>
+</p>

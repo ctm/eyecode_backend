@@ -1,0 +1,45 @@
+<h1>Editing user</h1>
+
+<%= semantic_form_for([:admin, @user]) do |f| %>
+  <%= f.semantic_errors %>
+  <%= f.inputs do -%>
+    <%= f.input :login %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%= f.input :time_zone, :priority_zones => ActiveSupport::TimeZone.us_zones %>
+    <%= f.input :active %>
+  <% end -%>
+  <p>
+    <b>Login count:</b>
+    <%= @user.login_count %>
+  </p>
+  <p>
+    <b>Last request at:</b>
+    <%= @user.last_request_at %>
+  </p>
+  <p>
+    <b>Last login at:</b>
+    <%= @user.last_login_at %>
+  </p>
+  <p>
+    <b>Current login at:</b>
+    <%= @user.current_login_at %>
+  </p>
+  <p>
+    <b>Last login ip:</b>
+    <%= @user.last_login_ip %>
+  </p>
+  <p>
+    <b>Current login ip:</b>
+    <%= @user.current_login_ip %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<p>
+  <%= link_to 'Show', [:admin, @user] %> |
+  <%= link_to 'Back', admin_users_path %>
+</p>

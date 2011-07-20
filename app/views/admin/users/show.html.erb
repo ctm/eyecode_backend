@@ -1,0 +1,59 @@
+<p>
+  <b>Login:</b>
+  <%= @user.login %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Time Zone:</b>
+  <%= @user.time_zone %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @user.active %>
+</p>
+
+<p>
+  <b>Login count:</b>
+  <%= @user.login_count %>
+</p>
+
+<p>
+  <b>Failed login count:</b>
+  <%= @user.failed_login_count %>
+</p>
+
+<p>
+  <b>Last request at:</b>
+  <%= @user.last_request_at %>
+</p>
+
+<p>
+  <b>Current login at:</b>
+  <%= @user.current_login_at %>
+</p>
+
+<p>
+  <b>Last login at:</b>
+  <%= @user.last_login_at %>
+</p>
+
+<p>
+  <b>Current login ip:</b>
+  <%= @user.current_login_ip %>
+</p>
+
+<p>
+  <b>Last login ip:</b>
+  <%= @user.last_login_ip %>
+</p>
+
+<p>
+  <%= link_to 'Edit', edit_admin_user_path(@user) %> |
+  <%= link_to 'Back', admin_users_path %>
+</p>
